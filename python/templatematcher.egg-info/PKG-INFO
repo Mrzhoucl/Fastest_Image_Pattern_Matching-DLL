@@ -1,9 +1,11 @@
 Metadata-Version: 2.4
 Name: templatematcher
 Version: 1.0.0
-Summary: Fast Image Pattern Matching Library
+Summary: Fast Image Pattern Matching Library (with OpenCV DLLs)
 Author: Template Matcher
 Requires-Python: >=3.6
+Requires-Dist: numpy>=1.19.0
 Dynamic: author
+Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary

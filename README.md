@@ -1,6 +1,7 @@
 # Fastest Image Pattern Matching DLL
 
 这是从原始MFC应用程序中提取的模板匹配算法动态库版本。
+[源代码链接](https://github.com/DennisLiu1993/Fastest_Image_Pattern_Matching)
 
 ## 特性
 
@@ -12,6 +13,7 @@
 - ✅ 支持旋转角度匹配
 - ✅ 支持次像素估计
 - ✅ 跨平台支持（Windows/Linux）
+- ✅ python接口/wheel包/opencv依赖一键打包
 
 ## 编译
 

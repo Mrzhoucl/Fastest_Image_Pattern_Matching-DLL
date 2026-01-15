@@ -4,8 +4,12 @@ setup.py
 E:/Research/Fastest_Image_Pattern_Matching-DLL/src/TemplateMatcher.cpp
 E:/Research/Fastest_Image_Pattern_Matching-DLL/src/TemplateMatcherC.cpp
 E:/Research/Fastest_Image_Pattern_Matching-DLL/src/simd_utils.cpp
+templatematcher/__init__.py
 templatematcher.egg-info/PKG-INFO
 templatematcher.egg-info/SOURCES.txt
 templatematcher.egg-info/dependency_links.txt
 templatematcher.egg-info/not-zip-safe
+templatematcher.egg-info/requires.txt
 templatematcher.egg-info/top_level.txt
+templatematcher/opencv_dlls/opencv_world4110.dll
+templatematcher/opencv_dlls/opencv_world4110d.dll
