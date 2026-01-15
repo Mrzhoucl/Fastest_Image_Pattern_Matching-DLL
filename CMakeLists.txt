@@ -260,3 +260,38 @@ if(BUILD_EXAMPLES)
         target_link_libraries(example_c PRIVATE ${OpenCV_LIBS})
     endif()
 endif()
+
+# Python绑定（可选，需要pybind11）
+option(BUILD_PYTHON_BINDINGS "Build Python bindings" OFF)
+
+if(BUILD_PYTHON_BINDINGS)
+    find_package(pybind11 QUIET)
+    if(pybind11_FOUND)
+        message(STATUS "Building Python bindings with pybind11")
+        
+        pybind11_add_module(templatematcher
+            python/pybind11_wrapper.cpp
+        )
+        
+        target_link_libraries(templatematcher PRIVATE TemplateMatcher)
+        if(TARGET opencv_core)
+            target_link_libraries(templatematcher PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs)
+        else()
+            target_link_libraries(templatematcher PRIVATE ${OpenCV_LIBS})
+        endif()
+        
+        # 设置C++17标准
+        set_target_properties(templatematcher PROPERTIES
+            CXX_STANDARD 17
+            CXX_STANDARD_REQUIRED ON
+        )
+        
+        if(MSVC)
+            target_compile_options(templatematcher PRIVATE /W3)
+        endif()
+    else()
+        message(WARNING "pybind11 not found. Python bindings will not be built.")
+        message(STATUS "Install pybind11: pip install pybind11")
+        message(STATUS "Or use setup.py in python/ directory")
+    endif()
+endif()
